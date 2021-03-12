@@ -21,6 +21,10 @@ namespace CalculatorWebApplication
             int result = client.Add(Convert.ToInt32(txtX.Text),
                 Convert.ToInt32(txtY.Text));
             lblResult.Text = result.ToString();
+
+            gvCalculations.DataSource = client.GetCalculations();
+            gvCalculations.DataBind();
+            
         }
     }
 }
